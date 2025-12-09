@@ -1,0 +1,150 @@
+{
+  "system-security-plan": {
+    "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+    "metadata": {
+      "title": "Demo System Security Plan",
+      "last-modified": "2024-01-15T10:30:00Z",
+      "version": "1.0.0",
+      "oscal-version": "1.1.0",
+      "roles": [
+        {
+          "id": "system-owner",
+          "title": "System Owner"
+        },
+        {
+          "id": "authorizing-official",
+          "title": "Authorizing Official"
+        },
+        {
+          "id": "security-officer",
+          "title": "Information System Security Officer"
+        }
+      ],
+      "parties": [
+        {
+          "uuid": "11111111-1111-1111-1111-111111111111",
+          "type": "organization",
+          "name": "Demo Organization"
+        }
+      ]
+    },
+    "import-profile": {
+      "href": "../profiles/demo-profile.json"
+    },
+    "system-characteristics": {
+      "system-ids": [
+        {
+          "id": "demo-system-001"
+        }
+      ],
+      "system-name": "Demo Cloud Application",
+      "description": "A demonstration cloud-based application for testing OSCAL SSP workflows.",
+      "security-sensitivity-level": "moderate",
+      "system-information": {
+        "information-types": [
+          {
+            "uuid": "22222222-2222-2222-2222-222222222222",
+            "title": "User Account Information",
+            "description": "Information about user accounts and authentication.",
+            "confidentiality-impact": {
+              "base": "moderate"
+            },
+            "integrity-impact": {
+              "base": "moderate"
+            },
+            "availability-impact": {
+              "base": "low"
+            }
+          }
+        ]
+      },
+      "security-impact-level": {
+        "security-objective-confidentiality": "moderate",
+        "security-objective-integrity": "moderate",
+        "security-objective-availability": "low"
+      },
+      "status": {
+        "state": "operational"
+      },
+      "authorization-boundary": {
+        "description": "The authorization boundary includes all cloud infrastructure components hosted in AWS, including EC2 instances, RDS databases, and S3 buckets."
+      }
+    },
+    "system-implementation": {
+      "users": [
+        {
+          "uuid": "33333333-3333-3333-3333-333333333333",
+          "role-ids": ["system-owner"],
+          "title": "System Administrator"
+        }
+      ],
+      "components": [
+        {
+          "uuid": "44444444-4444-4444-4444-444444444444",
+          "type": "software",
+          "title": "Web Application",
+          "description": "Python-based web application using Django framework.",
+          "status": {
+            "state": "operational"
+          }
+        },
+        {
+          "uuid": "55555555-5555-5555-5555-555555555555",
+          "type": "software",
+          "title": "Database",
+          "description": "PostgreSQL database hosted on AWS RDS.",
+          "status": {
+            "state": "operational"
+          }
+        },
+        {
+          "uuid": "66666666-6666-6666-6666-666666666666",
+          "type": "service",
+          "title": "Identity Provider",
+          "description": "Okta SSO integration for user authentication.",
+          "status": {
+            "state": "operational"
+          }
+        }
+      ]
+    },
+    "control-implementation": {
+      "description": "Control implementation for Demo Cloud Application.",
+      "implemented-requirements": [
+        {
+          "uuid": "77777777-7777-7777-7777-777777777777",
+          "control-id": "ac-2",
+          "statements": [
+            {
+              "statement-id": "ac-2_smt",
+              "uuid": "88888888-8888-8888-8888-888888888888",
+              "description": "The organization manages system accounts through Okta SSO. Account provisioning and deprovisioning is handled through HR integration with automated workflows."
+            }
+          ]
+        },
+        {
+          "uuid": "99999999-9999-9999-9999-999999999999",
+          "control-id": "ac-3",
+          "statements": [
+            {
+              "statement-id": "ac-3_smt",
+              "uuid": "aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa",
+              "description": "Access enforcement is implemented through role-based access control (RBAC) in the Django application. AWS IAM policies enforce access to cloud resources."
+            }
+          ]
+        },
+        {
+          "uuid": "bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb",
+          "control-id": "au-2",
+          "statements": [
+            {
+              "statement-id": "au-2_smt",
+              "uuid": "cccccccc-cccc-cccc-cccc-cccccccccccc",
+              "description": "The system audits authentication events, authorization decisions, data access, and administrative actions. Logs are collected via AWS CloudWatch and retained for 90 days."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "system-security-plan": {
+    "uuid": "f1f1f1f1-f1f1-f1f1-f1f1-f1f1f1f1f1f1",
+    "metadata": {
+      "title": "Example SSP - Version 2",
+      "last-modified": "2024-02-15T14:30:00Z",
+      "version": "2.0.0",
+      "oscal-version": "1.1.0"
+    },
+    "import-profile": {
+      "href": "demo-profile.json"
+    },
+    "system-characteristics": {
+      "system-ids": [{"id": "example-001"}],
+      "system-name": "Example System",
+      "description": "An example system for diff review testing. Now with enhanced security controls.",
+      "security-sensitivity-level": "moderate",
+      "status": {"state": "operational"}
+    },
+    "control-implementation": {
+      "description": "Enhanced control implementation with automated processes.",
+      "implemented-requirements": [
+        {
+          "uuid": "e1e1e1e1-e1e1-e1e1-e1e1-e1e1e1e1e1e1",
+          "control-id": "ac-2",
+          "statements": [
+            {
+              "statement-id": "ac-2_smt",
+              "uuid": "e2e2e2e2-e2e2-e2e2-e2e2-e2e2e2e2e2e2",
+              "description": "User accounts are managed through an automated identity management system integrated with HR. Account provisioning and deprovisioning follow documented procedures with approval workflows."
+            }
+          ]
+        },
+        {
+          "uuid": "e3e3e3e3-e3e3-e3e3-e3e3-e3e3e3e3e3e3",
+          "control-id": "ac-3",
+          "statements": [
+            {
+              "statement-id": "ac-3_smt",
+              "uuid": "e4e4e4e4-e4e4-e4e4-e4e4-e4e4e4e4e4e4",
+              "description": "Role-based access control (RBAC) is enforced across all system components. Access decisions are logged and reviewed monthly."
+            }
+          ]
+        },
+        {
+          "uuid": "e5e5e5e5-e5e5-e5e5-e5e5-e5e5e5e5e5e5",
+          "control-id": "au-2",
+          "statements": [
+            {
+              "statement-id": "au-2_smt",
+              "uuid": "e6e6e6e6-e6e6-e6e6-e6e6-e6e6e6e6e6e6",
+              "description": "The system generates audit records for authentication, authorization, data access, and configuration changes. Audit logs are sent to a centralized SIEM."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
